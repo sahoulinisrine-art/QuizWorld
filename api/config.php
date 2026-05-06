@@ -1,5 +1,4 @@
 <?php
-// api/config.php
 
 $host = 'localhost';
 $dbname = 'map_or_trap';
