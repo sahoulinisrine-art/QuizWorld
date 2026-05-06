@@ -9,7 +9,7 @@ class Pays {
 
     public function getAll() {
         $stmt = $this->pdo->query("SELECT * FROM db_pays");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);// résultats renvoyés sous tableau associatif (noms colonnes = clés)
     }
 
     // Récupérer un pays au hasard avec Rand quand il ORDER pour mélanger
