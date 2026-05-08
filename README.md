@@ -98,5 +98,6 @@ Consignes importantes !!!
 	•	Le projet doit être fonctionnel
 	•	Le design doit être soigné
 	•	Le code doit être organisé et lisible
-	•	Chaque élève doit participer activementLE PROJET DOIT ETRE RENDU POUR LA RENTRÉE le 11 MAI 2026 (Anniversaire de Vitor donc ramener aussi un cadeau pour chopper des points en plus)
+	•	Chaque élève doit participer activement
+	LE PROJET DOIT ETRE RENDU POUR LA RENTRÉE le 11 MAI 2026 (Anniversaire de Vitor donc ramener aussi un cadeau pour chopper des points en plus)
 
