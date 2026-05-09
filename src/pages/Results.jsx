@@ -23,22 +23,21 @@ export default function Results() {
       return "Keep trying, " + name + " !";
     }
   }
-// =================================================================
-   // Rejouer
+  // =================================================================
+  // Rejouer
   function playAgain() {
     navigate("/quiz", { state: { name: name, mode: mode } });
   }
 
-// =================================================================
- // Retour accueil
+  // =================================================================
+  // Retour accueil
   function goHome() {
     navigate("/");
   }
-// =================================================================
-// HEADER
+  // =================================================================
+  // HEADER
   return (
     <div className="min-h-screen bg-[#EAA568] flex flex-col items-center justify-center px-8 md:px-16 py-8 relative overflow-hidden">
-
       {/* Logo */}
       <div className="flex items-center gap-3 mb-8 z-10">
         <img src={logo} alt="Map or Trap" className="h-12 animate-spin-slow" />
@@ -55,4 +54,41 @@ export default function Results() {
           Trap !
         </h1>
       </div>
+      {/*// ================================================================= */}
+      {/* Carte Game Over */}
+      <div className="bg-[#FFF8F0] rounded-2xl px-10 py-8 w-full max-w-4xl mb-6 text-center z-10">
+        <p className="text-[#EAA568] font-bold text-sm uppercase tracking-wider mb-2">
+          Game Over
+        </p>
+        <p className="text-[#1B2A4A] font-bold text-2xl mb-1">{getMessage()}</p>
+        <p className="text-[#B07840] text-sm">Here are your results</p>
+      </div>
+
+      {/*// ================================================================= */}
+
+      {/* Score cercle */}
+      <div className="bg-[#FFF8F0] rounded-2xl px-10 py-8 w-full max-w-4xl mb-6 text-center z-10">
+
+        <div className="w-32 h-32 rounded-full bg-[#1B2A4A] flex flex-col items-center justify-center mx-auto mb-6">
+          <span className="text-white text-4xl font-bold">{score}</span>
+          <span className="text-[#EAA568] font-bold">/ {total}</span>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+          <div className="bg-green-100 border-2 border-green-500 rounded-xl p-4 text-center">
+            <div className="text-green-700 text-2xl font-bold">{score}</div>
+            <div className="text-green-700 text-sm">Correct</div>
+          </div>
+          <div className="bg-red-100 border-2 border-red-500 rounded-xl p-4 text-center">
+            <div className="text-red-700 text-2xl font-bold">{total - score}</div>
+            <div className="text-red-700 text-sm">Wrong</div>
+          </div>
+        </div>
+
+      </div>
+
+      {/*// ================================================================= */}
+    </div>
+  );
 }
