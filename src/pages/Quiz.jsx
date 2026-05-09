@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 // useLocation: récupère les données envoyées depuis la page précédente (le name et le mode qu'on a envoyé avec navigate dans Home.jsx)
 import logo from "../assets/logoWorld.webp";
+import worldMap from "../assets/world_map_hd.png";
 
 function Quiz() {
   //=======================================================================================
@@ -220,6 +221,11 @@ function Quiz() {
 
   return (
     <div className="min-h-screen bg-[#EAA568] flex flex-col items-center px-8 md:px-16 pt-6 pb-8 relative overflow-hidden">
+          <img
+            src={worldMap}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none"
+          />
       {/* Header */}
       <div className="flex items-center justify-between w-full max-w-4xl mb-4 z-10">
         <div className="flex items-center gap-3">

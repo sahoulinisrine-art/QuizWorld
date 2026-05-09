@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logoWorld.webp";
+import worldMap from "../assets/world_map_hd.png";
 
 export default function Results() {
   const location = useLocation();
@@ -38,6 +39,11 @@ export default function Results() {
   // HEADER
   return (
     <div className="min-h-screen bg-[#EAA568] flex flex-col items-center justify-center px-8 md:px-16 py-8 relative overflow-hidden">
+          <img
+            src={worldMap}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none"
+          />
       {/* Logo */}
       <div className="flex items-center gap-3 mb-8 z-10">
         <img src={logo} alt="Map or Trap" className="h-12 animate-spin-slow" />
