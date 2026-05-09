@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
