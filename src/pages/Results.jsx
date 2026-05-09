@@ -8,6 +8,7 @@ export default function Results() {
   const name = location.state.name;
   const score = location.state.score;
   const total = location.state.total;
+  const mode = location.state.mode;
 
   // Calculer le pourcentage
   const percentage = Math.round((score / total) * 100);
@@ -23,5 +24,9 @@ export default function Results() {
     }
   }
 
+   // Rejouer
+  function playAgain() {
+    navigate("/quiz", { state: { name: name, mode: mode } });
+  }
 
 }
