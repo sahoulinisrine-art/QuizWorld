@@ -57,8 +57,8 @@ function Quiz() {
       return function () {
         clearInterval(interval); // nettoyer l'ancien interval avant d'en créer un nouveau
       };
-      // eslint-disable-next-line
     },
+    // eslint-disable-next-line
     [timer, showFeedback, mode, questions],
   );
 
