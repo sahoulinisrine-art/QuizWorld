@@ -22,6 +22,7 @@ function Quiz() {
   // -> quelle réponse joueur a cliqué. null = il a pas encore cliqué.
   const [showFeedback, setShowFeedback] = useState(false);
   // -> show vert/rouge? false = pas encore répondu vs true = montre résultat.
+  const [timer, setTimer] = useState(30);
   //=======================================================================================
 
   // Récupérer les questions depuis l'API
@@ -35,7 +36,33 @@ function Quiz() {
         setQuestions(data); // data = [] de 10 questions. On le met dans questions avec setQuestions.
       });
   }, []); // [] = une seule fois, au chargement
+  //=======================================================================================
 
+  // Timer pour le mode Time Rush
+  useEffect(
+    function () {
+      if (mode !== "timerush") return;
+      if (showFeedback === true) return;
+      if (questions.length === 0) return;
+
+      if (timer === 0) {
+        clickAnswer(null);
+        return;
+      }
+
+      const interval = setInterval(function () {
+        setTimer(timer - 1);
+      }, 1000);
+
+      return function () {
+        clearInterval(interval); // nettoyer l'ancien interval avant d'en créer un nouveau
+      };
+      // eslint-disable-next-line
+    },
+    [timer, showFeedback, mode, questions],
+  );
+
+  //=======================================================================================
   // => À partir de là, le quiz peut commencer.
   //=======================================================================================
   // Quand le joueur clique sur une réponse
@@ -63,6 +90,7 @@ function Quiz() {
       setCurrent(current + 1); // passe à la question suivante
       setSelected(null); // on efface la réponse sélectionnée
       setShowFeedback(false); // on cache le vert/rouge pour la prochaine question
+      setTimer(30);
     }
   }
   //=======================================================================================
@@ -212,8 +240,16 @@ function Quiz() {
             <br />
             Trap !
           </h1>
-          
         </div>
+
+        {mode === "timerush" ? (
+          <div className="bg-white/20 rounded-xl px-4 py-2 flex items-center gap-2">
+            <span className="text-white text-xl font-bold">
+              ⏱ 0:{timer < 10 ? "0" + timer : timer} {/*  ajoute un zéro devant si chiffre < 10 "0:03" */}
+            </span> 
+          </div> 
+        ) : null}
+
       </div>
 
       {/* =======================================================================================*/}
