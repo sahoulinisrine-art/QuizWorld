@@ -85,7 +85,7 @@ export default function Results() {
             <div className="text-red-700 text-sm">Wrong</div>
           </div>
         </div>
-
+                 {/* AJOUTER LES MAUVAISES REPONSES LISTES APRES*/}
       </div>
 
       {/*// ================================================================= */}
