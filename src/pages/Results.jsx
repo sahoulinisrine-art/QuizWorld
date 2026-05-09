@@ -68,7 +68,6 @@ export default function Results() {
 
       {/* Score cercle */}
       <div className="bg-[#FFF8F0] rounded-2xl px-10 py-8 w-full max-w-4xl mb-6 text-center z-10">
-
         <div className="w-32 h-32 rounded-full bg-[#1B2A4A] flex flex-col items-center justify-center mx-auto mb-6">
           <span className="text-white text-4xl font-bold">{score}</span>
           <span className="text-[#EAA568] font-bold">/ {total}</span>
@@ -81,13 +80,31 @@ export default function Results() {
             <div className="text-green-700 text-sm">Correct</div>
           </div>
           <div className="bg-red-100 border-2 border-red-500 rounded-xl p-4 text-center">
-            <div className="text-red-700 text-2xl font-bold">{total - score}</div>
+            <div className="text-red-700 text-2xl font-bold">
+              {total - score}
+            </div>
             <div className="text-red-700 text-sm">Wrong</div>
           </div>
         </div>
-                 {/* AJOUTER LES MAUVAISES REPONSES LISTES APRES*/}
+        {/* AJOUTER LES MAUVAISES REPONSES LISTES APRES*/}
       </div>
 
+      {/*// ================================================================= */}
+      {/* Boutons */}
+      <div className="grid grid-cols-2 gap-4 w-full max-w-4xl z-10">
+        <button
+          onClick={playAgain}
+          className="p-4 rounded-xl bg-[#1B2A4A] text-white font-bold text-xl uppercase tracking-wider hover:bg-[#2a3f6a] hover:scale-105 transition-all duration-300 cursor-pointer"
+        >
+          Play again
+        </button>
+        <button
+          onClick={goHome}
+          className="p-4 rounded-xl bg-white/20 border-2 border-white text-white font-bold text-xl uppercase tracking-wider hover:bg-white/30 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >
+          Home
+        </button>
+      </div>
       {/*// ================================================================= */}
     </div>
   );
