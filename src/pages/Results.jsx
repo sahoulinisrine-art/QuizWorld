@@ -28,10 +28,31 @@ export default function Results() {
   function playAgain() {
     navigate("/quiz", { state: { name: name, mode: mode } });
   }
-  
+
 // =================================================================
  // Retour accueil
   function goHome() {
     navigate("/");
   }
+// =================================================================
+// HEADER
+  return (
+    <div className="min-h-screen bg-[#EAA568] flex flex-col items-center justify-center px-8 md:px-16 py-8 relative overflow-hidden">
+
+      {/* Logo */}
+      <div className="flex items-center gap-3 mb-8 z-10">
+        <img src={logo} alt="Map or Trap" className="h-12 animate-spin-slow" />
+        <h1
+          className="text-white uppercase leading-none"
+          style={{
+            fontFamily: "'Fredoka'",
+            letterSpacing: "-1px",
+            fontSize: "28px",
+          }}
+        >
+          Map or
+          <br />
+          Trap !
+        </h1>
+      </div>
 }
