@@ -23,10 +23,15 @@ export default function Results() {
       return "Keep trying, " + name + " !";
     }
   }
-
+// =================================================================
    // Rejouer
   function playAgain() {
     navigate("/quiz", { state: { name: name, mode: mode } });
   }
-
+  
+// =================================================================
+ // Retour accueil
+  function goHome() {
+    navigate("/");
+  }
 }
