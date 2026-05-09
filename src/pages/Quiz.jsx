@@ -221,11 +221,11 @@ function Quiz() {
 
   return (
     <div className="min-h-screen bg-[#EAA568] flex flex-col items-center px-8 md:px-16 pt-6 pb-8 relative overflow-hidden">
-          <img
-            src={worldMap}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none"
-          />
+      <img
+        src={worldMap}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none"
+      />
       {/* Header */}
       <div className="flex items-center justify-between w-full max-w-4xl mb-4 z-10">
         <div className="flex items-center gap-3">
@@ -251,11 +251,19 @@ function Quiz() {
         {mode === "timerush" ? (
           <div className="bg-white/20 rounded-xl px-4 py-2 flex items-center gap-2">
             <span className="text-white text-xl font-bold">
-              ⏱ 0:{timer < 10 ? "0" + timer : timer} {/*  ajoute un zéro devant si chiffre < 10 "0:03" */}
-            </span> 
-          </div> 
+              ⏱ 0:{timer < 10 ? "0" + timer : timer}{" "}
+              {/*  ajoute un zéro devant si chiffre < 10 "0:03" */}
+            </span>
+          </div>
         ) : null}
-
+        <button
+          onClick={function () {
+            navigate("/");
+          }}
+          className="bg-[#1B2A4A] text-white font-bold px-4 py-2 rounded-xl hover:bg-red-600 hover:scale-105 transition-all duration-300 cursor-pointer"
+        >
+          Quit
+        </button>
       </div>
 
       {/* =======================================================================================*/}
