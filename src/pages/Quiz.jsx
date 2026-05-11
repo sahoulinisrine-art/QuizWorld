@@ -23,7 +23,7 @@ function Quiz() {
   // -> quelle réponse joueur a cliqué. null = il a pas encore cliqué.
   const [showFeedback, setShowFeedback] = useState(false);
   // -> show vert/rouge? false = pas encore répondu vs true = montre résultat.
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(10);
   //=======================================================================================
 
   // Récupérer les questions depuis l'API
@@ -91,7 +91,7 @@ function Quiz() {
       setCurrent(current + 1); // passe à la question suivante
       setSelected(null); // on efface la réponse sélectionnée
       setShowFeedback(false); // on cache le vert/rouge pour la prochaine question
-      setTimer(30);
+      setTimer(10);
     }
   }
   //=======================================================================================
