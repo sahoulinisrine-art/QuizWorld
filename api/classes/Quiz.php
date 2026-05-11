@@ -33,7 +33,7 @@ class Quiz {
         } else if ($type == 'continent') {
             $question = "On which continent is " . $correct['nom'] . " located?";
             $correctAnswer = $correct['continent'];
-            $allContinents = ['Europe', 'Afrique', 'Asie', 'Amérique du Nord', 'Amérique du Sud', 'Océanie'];
+            $allContinents = ['Europe', 'Africa', 'Asia', 'North America', 'South America', 'Oceania'];
             $wrongAnswers = [];
             foreach ($allContinents as $c) {
                 if ($c !== $correct['continent']) {
